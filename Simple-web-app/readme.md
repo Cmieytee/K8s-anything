@@ -23,7 +23,7 @@ To make the NGINX application accessible within the cluster, we create a Service
 - Verify the Service: kubectl get svc
 - Visit the Service via ClusterIP: minikube service nginx-service --url  (please note you are using the name of the service and not the name of the yaml file)
 The output is like this:
-###### http://127.0.0.1:52318 
+   ######                            http://127.0.0.1:52318 
 
 
 
@@ -35,9 +35,11 @@ c) Cleaner URLs
 
 - Enable Ingress in Minikube: minikube addons enable ingress
 - Verify that the Ingress Controller is Running: kubectl get pods -n ingress-nginx (the default namespace for the ingress is ingress-nginx)
+
+
 Expected output (look for ingress-nginx-controller in Running status):
 
-###### ingress-nginx-controller-56d7c84fd4-rw6kc   1/1     Running     0          84m
+######        ingress-nginx-controller-56d7c84fd4-rw6kc       1/1         Running         0               84m
 
 ### Step 4: Configure Ingress for External Access
 
@@ -58,6 +60,7 @@ Then add this command line : 127.0.0.1 nginx.local ; ctrl+x and then Y.
 - Run Minikube Tunnel (Required for External Traffic): minikube tunnel
 Ensure to keep this terminal open.
 - Test Using curl: curl --resolve "nginx.local:80:127.0.0.1" -i http://nginx.local
+  
 Expected output: 
 
 ###### HTTP/1.1 200 OK
@@ -68,21 +71,6 @@ Finally run this command:
 ### curl 127.0.0.1
 
 #### Hurray you have just deployed a simple Nginx server
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-- 
 
 
 
