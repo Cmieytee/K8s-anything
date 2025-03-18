@@ -1,0 +1,24 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: nginx-deployment
+  labels: 
+    app: nginx
+spec: #pod specification
+  template:
+    metadata: 
+      labels: 
+        app: nginx  #label of the pods
+    spec: #container specification, it must be under the pod specification
+      containers:
+      - name: nginx-container
+        image: nginx:latest 
+        ports:
+        - containerPort: 80 
+  selector:
+    matchLabels:
+      app: nginx  #it has to match the label of the pod
+  replicas: 2 #we want 2 instances of the pods running
+  
+
