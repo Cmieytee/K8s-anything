@@ -12,7 +12,7 @@ NGINX (Engine-X) is a high-performance, event-driven web server designed to effi
 
 A Deployment ensures that multiple replicas of the NGINX server are managed automatically. The deployment file is located in deployment.yaml
 
-- Apply the Deployment: kubectl apply -f deployment.yaml`
+- Apply the Deployment: kubectl apply -f deployment.yaml
 - Verify the Deployment: kubectl get deployments
 
 ### Step 2: Expose NGINX Using a Kubernetes Service
