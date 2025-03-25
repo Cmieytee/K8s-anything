@@ -1,0 +1,11 @@
+# k8s/frontend-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+  namespace: multi-tier
+spec:
+  selector:
+    app: frontend
+  ports:
+    - port: 80

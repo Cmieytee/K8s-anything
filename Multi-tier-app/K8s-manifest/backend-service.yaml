@@ -1,0 +1,11 @@
+# k8s/backend-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service
+  namespace: multi-tier
+spec:
+  selector:
+    app: backend
+  ports:
+    - port: 5000
